@@ -6,10 +6,7 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 trainDataGen = ImageDataGenerator(rescale = 1./255, zoom_range = 0.2, shear_range = 0.2, horizontal_flip = True)
 testDataGen = ImageDataGenerator(rescale = 1./255, zoom_range = 0.2, shear_range = 0.2, horizontal_flip = True)
 
-trainX = trainDataGen.flow_from_directory('./Dataset/Garbage classification', target_size=(64,64), batch_size=32, class_mode='categorical')
-testX = testDataGen.flow_from_directory('./Dataset/Garbage classification', target_size=(64,64), batch_size=32, class_mode='categorical')
+trainX = trainDataGen.flow_from_directory('./Dataset/Garbage classification', target_size=(300,300), batch_size=32, class_mode='categorical')
+testX = testDataGen.flow_from_directory('./Dataset/Garbage classification', target_size=(300,300), batch_size=32, class_mode='categorical')
 
 print(trainX.class_indices)
-
-
-
